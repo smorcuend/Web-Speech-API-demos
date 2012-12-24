@@ -8,3 +8,5 @@ This specification defines a JavaScript API to enable web developers to incorpor
 
 1. You need to activate the "Web Audio Input" and "Speech JavaScript API" flags inside of [chrome://flags/](chrome://flags/ "chrome://flags/") in Chrome browser.
 2. Enjoy it making new demos!
+
+#### You can testing this demo, [here](hhttp://smorcuend.github.com/web_speech_api_demo "here")
