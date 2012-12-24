@@ -4,10 +4,10 @@
 
         /** Demo bulb*/
         if(transcript == "light off"){
-            document.getElementById('bulb').src = '_/img/OffLamp128.png';
+            document.getElementById('bulb').src = 'img/OffLamp128.png';
         }
         else if(transcript == "light on"){
-            document.getElementById('bulb').src = '_/img/OnLamp128.png';
+            document.getElementById('bulb').src = 'img/OnLamp128.png';
         }
 
         /** Demo video*/
@@ -15,8 +15,8 @@
             document.getElementById('video').play();
         }
         else if(transcript == "stop"){
-            document.getElementById('video').pause().currentTime(0);
-            
+            document.getElementById('video').pause();
+            document.getElementById('video').currentTime = 0;
         }
 
     }
