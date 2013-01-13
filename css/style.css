@@ -1,19 +1,6 @@
-/*
-	HTML5 Reset :: style.css
-	----------------------------------------------------------
-	We have learned much from/been inspired by/taken code where offered from:
-	
-	Eric Meyer					:: http://ericmeyer.com
-	HTML5 Doctor				:: http://html5doctor.com
-	and the HTML5 Boilerplate	:: http://html5boilerplate.com
-	
--------------------------------------------------------------------------------*/
-
-/* Let's default this puppy out
--------------------------------------------------------------------------------*/
 
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
-	margin: 0;	padding: 0;	border: 0;	outline: 0;	font-size: 100%;	vertical-align: baseline;	background: transparent;
+	margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;	background: transparent;
 }									
 
 article, aside, figure, footer, header, hgroup, nav, section {display: block;}
@@ -58,7 +45,6 @@ pre {
 
 input[type="radio"] {vertical-align: text-bottom;}
 input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
-.ie6 input {vertical-align: text-bottom;}
 
 select, input, textarea {font: 99% sans-serif;}
 
@@ -110,9 +96,9 @@ body {font: normal 1em/2em Helmet, Freesans, sans-serif;background: url(gray_jea
 	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
 
 /* we like off-black for text */
-body, select, input, textarea {color: #333;background-color: #333; text-shadow:0px 0px 4px #333;}
+body, select, input, textarea {color: #333;background-color: #333; text-shadow:0px 0px 5px #222;}
 
-a {color: #b9f;}
+a {color: #b9f;text-decoration: none;}
 a:hover {color: #69f;}
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
@@ -132,19 +118,22 @@ header{
 }
 
 article{
-	background-color: rgba(50,70,80,0.8);color: #ddd;
-	text-align: center;width: 97%;height: auto; 
-	display:inline-block;
+	color: #ddd;
+	text-align: center; 
+	display:block;
 	border: 2px dashed #ddd;
 	margin:10px auto;
 	vertical-align: middle;
-	padding: 20px auto;
+	padding: 20px;
 }
+article p{width: 100%}
+article.synt{background-color: rgba(50,70,80,0.8);}
+article.reco{background-color: rgba(50,70,20,0.8)}
 
-h1{margin:10px auto;font-size: 1.5em;}
-h2{margin:10px auto;font-size: 1em;}
+h1{margin:10px auto;font-size: 2em;}
+h2{margin:10px auto;font-size: 1.5em;}
 #speech-container p{margin:10px auto;text-align: left;width: 90%}
-#speech-log{color:gray;}
+#speech-log{color:#999;}
 
 /*button{background-color: #eda;padding: 5px;border:3px solid red;margin:0px 5px;border-radius: 30px;font-weight: bold;box-shadow: 0px 0px 5px #666;}*/
 button.css3button:hover{color:#333;box-shadow: 0px 0px 5px #aaa;}
@@ -155,13 +144,13 @@ button.css3button {
 	color: #ffffff;
 	padding: 8px 15px;
 	background: -moz-linear-gradient(top,#cdff42 0%,#006629);
-	background: -webkit-gradient(linear, left top, left bottom, from(#cdff42),to(#006629));
+	background: -webkit-linear-gradient(top,#cdff42 0%,#006629);
+	background: linear-gradient(top,#cdff42 0%,#006629);
 	border-radius: 10px;
 	border: 1px solid #240066;
 	box-shadow:	0px 1px 8px rgba(0,0,0,0.5),inset 0px 0px 1px rgba(255,255,255,0.5);
 	text-shadow:0px -1px 0px rgba(000,000,000,0.7),	0px 1px 0px rgba(255,255,255,0.3);
 }
-
 
 input[type="text"] {color:#eee;width: 50%;height:10%; background-color: #323;color:#9a9;margin: 10px auto;font-size: 1.1em}
 #speech-demos div{width: 90%;margin: 0 auto;}
@@ -170,26 +159,13 @@ input[type="text"] {color:#eee;width: 50%;height:10%; background-color: #323;col
 #bulb{width: 20%}
 #video{width: 35%}
 
+#speech-transcript{padding: 4px;background-color: gray; border: 1px solid #efd;border-radius: 5px;color:#ccc;}
 
-/* Print styles!
--------------------------------------------------------------------------------*/
-@media print {
-
-}
-
-/* Media queries!
--------------------------------------------------------------------------------*/
-
-/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-@media screen and (max-device-width: 480px) {
-	
-		
-}
-
-@media all and (orientation: portrait) {
-	
-}
-
-@media all and (orientation: landscape) {
-	
-}
+#log-message{
+	position:fixed;bottom: 0;
+ 	width:100%; margin:0 auto;
+ 	text-align:center; 
+ 	background-color: #333;color:red;
+ 	padding: 5px 10px;
+ 	opacity: 0;z-index:20;
+ }

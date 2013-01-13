@@ -1,3 +1,10 @@
+/*============================================================
+*
+*   A Web Speech JavaScript API framework (Speech Recognition)
+*   (c) Sergio Morcuende 2013
+*
+=============================================================*/
+
 (function (window, undefined) {
 
     var speechBtn = document.getElementById('speech-btn'),
@@ -6,31 +13,27 @@
         speechLog = document.getElementById('speech-log'),
         sr,isResult = false;
 
-    if ( SpeechRecognition !== undefined ) {
+    if ( SpeechRecognition != undefined ) {
 
         sr = new SpeechRecognition();
         console.log('sr:' + sr);
+        speechLog.innerText = "SpeechRecognition object created. Ready for start the speech recognition process.";
 
-        speechBtn.addEventListener('click', function () {
-            //console.log(sr);
-            sr.start();
-        });
-
-
+        /** Start the speech recognition mechanism through space key or button */
         $(window).keypress(function(event) {
             if( event.which == 32 ){
-                sr.start();
-                event.preventDefault();
-            }
-            console.log('space key pushed');
-            
+                sr.start();// Space key
+            }  
         });
 
         speechBtn.addEventListener('click', function () {
             sr.start();
         });
+        
 
+        /* Event handler methods */
         sr.onstart = function (event) {
+            speechLog.innerText = 'onstart event: '+event;
             isResult = false;
             console.log('onstart event');
         }
@@ -41,11 +44,12 @@
             console.log('onaudiostart event');
         }
         sr.onsoundstart = function (event) {
+            speechLog.innerText = 'onsoundend event: '+event;
             console.log('onsoundstart event');   
         }
         sr.onspeechstart = function (event) {
             speechLog.innerText = "I'm listening...";
-            speechTranscript.value = 'Processing...';
+            speechTranscript.innerText = 'Processing...';
             console.log('onspeechstart event');
             speechTranscript.style.backgroundColor = '#a56';
         }
@@ -57,9 +61,11 @@
         }
 
         sr.onsoundend = function (event) {
+            speechLog.innerText = 'onsoundend event: '+event;
             console.log('onsoundend event');   
         }
         sr.onaudioend = function (event) {
+            speechLog.innerText = 'onaudioend event: '+event;
             console.log('onaudioend event');
         }
         
@@ -70,7 +76,7 @@
             if (event.result.length > 0) {
                 isResult = true;
                 console.log('result array lenght:'+ event.result.length);
-                speechTranscript.value = event.result[0].transcript;
+                speechTranscript.innerText = event.result[0].transcript;
                 
                 for (var i = 0; i < event.result.length; ++i) {
                     console.log('transcript result: ['+i+']' + event.result[i].transcript);
@@ -84,10 +90,12 @@
         }
 
         sr.onnomatch = function (event) {
-            console.log('onnomatch event');   
+            console.log('onnomatch event');
+            speechLog.innerText = 'Onnomatch event: '+event;  
         }
         sr.onerror = function (event) {
             console.log('onerror event: '+event);
+            speechLog.innerText = 'Onerror event: '+event;
         }
 
         sr.onend = function (event) {
@@ -95,7 +103,8 @@
             if (!isResult) {
                 speechTranscript.placeholder = "Speech not recognised, try again!";
                 speechLog.innerText = 'Speech not recognised, try again!';
-                speechTranscript.value = '';
+                speechTranscript.innerText = 'Speech not recognised, try again!';
+                speechTranscript.style.backgroundColor = null;
             }else{
                 speechLog.innerText = 'Ready for the next transcription';
             }
@@ -105,6 +114,8 @@
 
         }
 
+    }else{
+        alert('Your browser don\'t support Web Speech Recognition API');
     }
 
 

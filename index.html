@@ -1,71 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html class="no-js" lang="en">
-<!-- the "no-js" class is for Modernizr. -->
 
 <head id="www-sitename-com" data-template-set="html5-reset">
 
-	<meta charset="utf-8" />
-	
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	
-	<title>Speech Recognition Demo using Web Speech API</title>
-
-	<link rel="stylesheet" href="css/style.css" />
-	<script type="text/javascript" src='js/transcriptionAnalyzer.js'></script>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<title>Speech Recognition and Speech Synthesis demos using Web Speech API</title>
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+<div class="wrapper">
 	<header>		
-		<h1>Demo: Speech recognition based on <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech API</a></h1>
+		<h1>Demos using <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech API</a></h1>
 		<p>(Only tested on last version of <a href="http://www.google.com/chrome">Chrome</a> browser).</p>
 	</header>
 	
 	<div id="content">
 
-		<article id="speech-container">
-			<h2>Push "space" key or <button id="speech-btn" class="css3button">Click Me!</button> to start the speech recognition.</h2>
-		  	
-		  	<label>Have you said?: </label><input type="text" id="speech-transcript" value="" placeholder="This field show the speech transcription" />
-		  	<p>Log: <span id="speech-log"></span></p>
-
+		<article class="reco">
+			<h2>Demo1: Using the native <mark>Speech Recognition</mark> Javascript interface on the modern Web browser.</h2>
+			<a href="demo1.html" title="Demo1"><button class="css3button">Play Demo</button></a>		  	
 		</article>
 
-		<article id="speech-demos">
-			<h1>Demos using the speech recognition.</h1>
-		  	<div>
-				<p>
-					You try to speak: <mark>"Light on"</mark>. If the bulb is off, you should see lamp switching on.
-					<br />
-					You try to speak: <mark>"Light off"</mark>. If the bulb is on, you should see lamp switching off.
-				</p>
-				<img id="bulb" src="img/OffLamp128.png" alt="bulb" />
-			</div>
-
-			<div>
-				<p>
-					You try to speak: <mark>"Play"</mark>. The video should start playing.
-					<br />
-					You try to speak: <mark>"Stop"</mark>. The video should stop playing.
-				</p>
-				<video id="video" src="http://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" alt="video" controls />
-		  	</div>
+		<article class="synt">
+			<h2>Demo2: Using the native <mark>Speech Synthesis</mark> Javascript interface on the modern Web browser.</h2>
+			<a href="demo2.html" title="Demo1"><button class="css3button">Play Demo</button></a>
 		</article>
 
 	</div>
 
 </div>
 
-<!-- here comes the javascript -->
 <script type="text/javascript" src='js/jquery-1.8.3.min.js'></script>
-
-<!-- this is where we put our custom functions -->
-<script type="text/javascript" src='js/speech2text.js'></script>
-
   
 </body>
 </html>
