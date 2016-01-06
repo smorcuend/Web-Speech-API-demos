@@ -1,32 +1,35 @@
+var logEnableControl = document.getElementById('log-enable-control');
+var logMessage = document.getElementById('log-message');
 
-$('#log-enable-control').change(function(e){
-  if ($(this).attr("checked")) {
-      $('#log-message').transition({opacity: 0.9});
-      return;
+logEnableControl.addEventListener('change', function(e) {
+  if (this.checked) {
+    logMessage.style.opacity = 0.9;
+  } else {
+    logMessage.style.opacity = 0;
   }
-  $('#log-message').transition({opacity: 0});
-
 });
 
-function transcriptionAnalyzer (transcript){
+function transcriptionAnalyzer(transcript) {
 
-    console.log('audio transcript: ' + transcript);
+  if (typeof transcript !== 'string') {
+    return false;
+  }
 
-    /** Demo bulb*/
-    if(transcript == "light off"){
-        document.getElementById('bulb').src = 'img/OffLamp128.png';
-    }
-    else if(transcript == "light on"){
-        document.getElementById('bulb').src = 'img/OnLamp128.png';
-    }
+  console.log('audio transcript: ' + transcript);
+  transcript = transcript.toLowerCase();
+  /** Demo bulb*/
+  if (transcript === 'light off') {
+    document.getElementById('bulb').src = 'img/OffLamp128.png';
+  } else if (transcript === 'light on') {
+    document.getElementById('bulb').src = 'img/OnLamp128.png';
+  }
 
-    /** Demo video*/
-    if(transcript == "play"){
-        document.getElementById('video').play();
-    }
-    else if(transcript == "stop"){
-        document.getElementById('video').pause();
-        document.getElementById('video').currentTime = 0;
-    }
+  /** Demo video*/
+  if (transcript == 'play') {
+    document.getElementById('video').play();
+  } else if (transcript === 'stop') {
+    document.getElementById('video').pause();
+    document.getElementById('video').currentTime = 0;
+  }
 
 }

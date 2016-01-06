@@ -1,171 +1,509 @@
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
 
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
-	margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;	background: transparent;
-}									
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
 
-article, aside, figure, footer, header, hgroup, nav, section {display: block;}
 
 /* Responsive images and other embedded objects
    Note: keeping IMG here will cause problems if you're using foreground images as sprites.
    If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
-img,object,embed {max-width: 100%;}
+
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
 
 /* force a vertical scrollbar to prevent a jumpy page */
-html {overflow-y: scroll;}
+
+html {
+  overflow-y: scroll;
+}
+
 
 /* we use a lot of ULs that aren't bulleted. 
 	don't forget to restore the bullets within content. */
-ul {list-style: none;}
 
-blockquote, q {quotes: none;}
-
-blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
-
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-
-del {text-decoration: line-through;}
-
-abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
-
-/* tables still need cellspacing="0" in the markup */
-table {border-collapse: collapse; border-spacing: 0;}
-th {font-weight: bold; vertical-align: bottom;}
-td {font-weight: normal; vertical-align: top;}
-
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
-
-input, select {vertical-align: middle;}
-
-pre {
-	white-space: pre; /* CSS2 */
-	white-space: pre-wrap; /* CSS 2.1 */
-	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-	word-wrap: break-word; /* IE */
+ul {
+  list-style: none;
 }
 
-input[type="radio"] {vertical-align: text-bottom;}
-input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+blockquote,
+q {
+  quotes: none;
+}
 
-select, input, textarea {font: 99% sans-serif;}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
 
-table {font-size: inherit; font: 100%;}
- 
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+
+/* tables still need cellspacing="0" in the markup */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+  *vertical-align: baseline;
+}
+
+select,
+input,
+textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+
 /* Accessible focus treatment
 	people.opera.com/patrickl/experiments/keyboard/test */
-a:hover, a:active {outline: none;}
 
-small {font-size: 85%;}
+a:hover,
+a:active {
+  outline: none;
+}
 
-strong, th {font-weight: bold;}
+small {
+  font-size: 85%;
+}
 
-td, td img {vertical-align: top;} 
+strong,
+th {
+  font-weight: bold;
+}
+
+td,
+td img {
+  vertical-align: top;
+}
+
 
 /* Make sure sup and sub don't screw with your line-heights
 	gist.github.com/413930 */
-sub, sup {font-size: 75%; line-height: 0; position: relative;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
 
 /* standardize any monospaced elements */
-pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
+
 
 /* hand cursor on clickable elements */
-.clickable,label, input[type=button], input[type=submit], button {cursor: pointer;}
+
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer;
+}
+
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea {margin: 0;}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
 
 /* make buttons play nice in IE */
-button {width: auto; overflow: visible;}
- 
+
+button {
+  width: auto;
+  overflow: visible;
+}
+
+
 /* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }  
+
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
 
 
 /* Ok, this is where the fun starts.
 -------------------------------------------------------------------------------*/
 
-/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
-body {font: normal 1em/2em Helmet, Freesans, sans-serif;background: url(gray_jean.png);}
 
-#content{margin:0 auto;width: 80%}
+/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
+
+body {
+  font: normal 1em/2em Helmet, Freesans, sans-serif;
+  background: url(gray_jean.png);
+}
+
+#content {
+  margin: 0 auto;
+  width: 80%
+}
+
 
 /* using local fonts? make sure to read up on Paul Irish's 
 	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
 
-/* we like off-black for text */
-body, select, input, textarea {color: #333;background-color: #333; text-shadow:0px 0px 5px #222;}
 
-a {color: #b9f;text-decoration: none;}
-a:hover {color: #69f;}
+/* we like off-black for text */
+
+body {
+  color: #333;
+  background-color: #333;
+  text-shadow: 0px 0px 5px #222;
+}
+
+a {
+  color: #b9f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #69f;
+}
+
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
-::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
-::selection {background: #fcd700; color: #fff; text-shadow: none;} 
+
+::-moz-selection {
+  background: #fcd700;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fcd700;
+  color: #fff;
+  text-shadow: none;
+}
+
 
 /*	j.mp/webkit-tap-highlight-color */
-a:link {-webkit-tap-highlight-color: #fcd700;} 
 
-ins {background-color: #fcd700; color: #000; text-decoration: none;}
-mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
-
-header{
-	background-color: rgba(100,100,100,0.7);color: #ddd;
-	text-align: center; margin: 20px auto; 
-	width: 80%;padding: 20px; border-radius: 10px;
+a:link {
+  -webkit-tap-highlight-color: #fcd700;
 }
 
-article{
-	color: #ddd;
-	text-align: center; 
-	display:block;
-	border: 2px dashed #ddd;
-	margin:10px auto;
-	vertical-align: middle;
-	padding: 20px;
+ins {
+  background-color: #fcd700;
+  color: #000;
+  text-decoration: none;
 }
-article p{width: 100%}
-article.synt{background-color: rgba(50,70,80,0.8);}
-article.reco{background-color: rgba(50,70,20,0.8)}
 
-h1{margin:10px auto;font-size: 2em;}
-h2{margin:10px auto;font-size: 1.5em;}
-#speech-container p{margin:10px auto;text-align: left;width: 90%}
-#speech-log{color:#999;}
+mark {
+  background-color: #fcd700;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+header {
+  background-color: rgba(100, 100, 100, 0.7);
+  color: #ddd;
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+article {
+  color: #ddd;
+  text-align: center;
+  display: block;
+  border: 2px dashed #ddd;
+  margin: 10px auto;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+article p {
+  width: 100%
+}
+
+article.synt {
+  background-color: rgba(50, 70, 80, 0.8);
+}
+
+article.reco {
+  background-color: rgba(50, 70, 20, 0.8)
+}
+
+h1 {
+  margin: 10px auto;
+  font-size: 2em;
+}
+
+h2 {
+  margin: 10px auto;
+  font-size: 1.5em;
+}
+
+#speech-container p {
+  margin: 10px auto;
+  text-align: left;
+  width: 90%
+}
+
+#speech-log {
+  color: #999;
+}
+
 
 /*button{background-color: #eda;padding: 5px;border:3px solid red;margin:0px 5px;border-radius: 30px;font-weight: bold;box-shadow: 0px 0px 5px #666;}*/
-button.css3button:hover{color:#333;box-shadow: 0px 0px 5px #aaa;}
-button.css3button:disabled{background-color: #333;}
-button.css3button:active{color: #a33;box-shadow: 0px 0px 5px #eee;}
-button.css3button {
-	font-size: 0.8em;
-	color: #ffffff;
-	padding: 8px 15px;
-	background: -moz-linear-gradient(top,#cdff42 0%,#006629);
-	background: -webkit-linear-gradient(top,#cdff42 0%,#006629);
-	background: linear-gradient(top,#cdff42 0%,#006629);
-	border-radius: 10px;
-	border: 1px solid #240066;
-	box-shadow:	0px 1px 8px rgba(0,0,0,0.5),inset 0px 0px 1px rgba(255,255,255,0.5);
-	text-shadow:0px -1px 0px rgba(000,000,000,0.7),	0px 1px 0px rgba(255,255,255,0.3);
+
+button.css3button:hover {
+  color: #333;
+  box-shadow: 0px 0px 5px #aaa;
 }
 
-input[type="text"] {color:#eee;width: 50%;height:10%; background-color: #323;color:#9a9;margin: 10px auto;font-size: 1.1em}
-#speech-demos div{width: 90%;margin: 0 auto;}
-#speech-demos div p{float:left;width: 60%}
+button.css3button:disabled {
+  background-color: #333;
+}
 
-#bulb{width: 20%}
-#video{width: 35%}
+button.css3button:active {
+  color: #a33;
+  box-shadow: 0px 0px 5px #eee;
+}
 
-#speech-transcript{padding: 4px;background-color: gray; border: 1px solid #efd;border-radius: 5px;color:#ccc;}
+button.css3button {
+  font-size: 0.8em;
+  color: #ffffff;
+  padding: 8px 15px;
+  background: -moz-linear-gradient(top, #cdff42 0%, #006629);
+  background: -webkit-linear-gradient(top, #cdff42 0%, #006629);
+  background: linear-gradient(top, #cdff42 0%, #006629);
+  border-radius: 10px;
+  border: 1px solid #240066;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0px -1px 0px rgba(000, 000, 000, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.3);
+}
 
-#log-message{
-	position:fixed;bottom: 0;
- 	width:100%; margin:0 auto;
- 	text-align:center; 
- 	background-color: #333;color:red;
- 	padding: 5px 10px;
- 	opacity: 0;z-index:20;
- }
+input[type="text"] {
+  color: #eee;
+  width: 50%;
+  height: 10%;
+  background-color: #323;
+  color: #9a9;
+  margin: 10px auto;
+  font-size: 1.1em
+}
+
+#speech-demos div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#speech-demos div p {
+  float: left;
+  width: 60%
+}
+
+#bulb {
+  width: 20%
+}
+
+#video {
+  width: 35%
+}
+
+#speech-transcript {
+  padding: 4px;
+  background-color: gray;
+  border: 1px solid #efd;
+  border-radius: 5px;
+  color: #ccc;
+}
+
+#log-message {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #333;
+  color: red;
+  padding: 5px 10px;
+  opacity: 0;
+  z-index: 20;
+}

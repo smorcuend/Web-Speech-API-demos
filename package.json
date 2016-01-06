@@ -1,0 +1,25 @@
+{
+  "name": "webspeechapi",
+  "version": "0.0.1",
+  "description": "web speech api testing in local",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smorcuend/Web-Speech-API-demos.git"
+  },
+  "keywords": [
+    "web",
+    "speech",
+    "api",
+    "demo"
+  ],
+  "author": "Sergio Morcuende",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/smorcuend/Web-Speech-API-demos/issues"
+  },
+  "homepage": "https://github.com/smorcuend/Web-Speech-API-demos#readme"
+}
